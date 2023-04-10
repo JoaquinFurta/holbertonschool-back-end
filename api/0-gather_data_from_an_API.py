@@ -10,8 +10,8 @@ if __name__ == "__main__":
             user_id = int(sys.argv[1])
         else:
             exit
-        emp = requests.get('https://jsonplaceholder.typicode.com/users/'
-                           + str(user_id))
+        emp = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                           str(user_id))
         emp_name = emp.json()['name']
 
         emp = requests.get('https://jsonplaceholder.typicode.com/todos')
