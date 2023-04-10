@@ -5,7 +5,7 @@
 import requests
 import sys
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
+    if len(sys.argv) == 2:
         if int(sys.argv[1]):
             user_id = int(sys.argv[1])
         else:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
         emp = requests.get('https://jsonplaceholder.typicode.com/todos')
         todos = [elem['title'] for elem in emp.json()
-                 if elem['userId'] == user_id and not elem['completed']]
+                 if elem['userId'] == user_id and elem['completed']]
 
         print(f"Employee {emp_name} is done with tasks({len(todos)}/20):")
         for elem in todos:
