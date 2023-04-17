@@ -18,5 +18,5 @@ if __name__ == "__main__":
         with open(f'{user_id}.csv', 'w') as f:
             for elem in emp_todo.json():
                 if elem['userId'] == user_id:
-                    f.write(f"\"{user_id}\",\"{emp_name}\"," +
+                    f.write(f"\"{user_id}\",\"{emp.json()['username']}\"," +
                             f"\"{elem['completed']}\",\"{elem['title']}\"\n")
